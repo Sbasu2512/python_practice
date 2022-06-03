@@ -1,5 +1,9 @@
 function shoppingSpree(arr) {
     // your code here    
+    return arr.reduce((acc,item)=>{
+        acc += item.price
+        return acc;
+    },0)
  }
  
  var wishlist = [
