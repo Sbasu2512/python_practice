@@ -29,7 +29,8 @@ class LinkedList:
     new_node.set_next_node(self.head_node)
     self.head_node = new_node
 
-# traverse through the linked list and stringify the list
+# The method should traverse the list, beginning at the head node, and collect each node’s value in a string. 
+# Once the end of the list has been reached, the method should return the string.
   def stringify_list(self):
     string_list = ""
     current_node = self.get_head_node()
@@ -38,7 +39,8 @@ class LinkedList:
         string_list += str(current_node.get_value()) + "\n"
       current_node = current_node.get_next_node()
     return string_list
-#   remove a node depending on the given value
+    
+#   we’ll create a function that removes the first node that contains a particular value.
   def remove_node(self, value_to_remove):
     current_node = self.get_head_node()
     if current_node.get_value() == value_to_remove:
