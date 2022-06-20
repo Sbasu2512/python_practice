@@ -1,5 +1,5 @@
 '''
-A node is the basic building block of a linked list
+A node is the basic building block of a linked list and Data structure
 '''
 class Node:
   def __init__(self, value, next_node=None):
