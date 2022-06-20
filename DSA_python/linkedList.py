@@ -1,17 +1,7 @@
-# We'll be using our Node class
-class Node:
-  def __init__(self, value, next_node=None):
-    self.value = value
-    self.next_node = next_node
-    
-  def get_value(self):
-    return self.value
-  
-  def get_next_node(self):
-    return self.next_node
-  
-  def set_next_node(self, next_node):
-    self.next_node = next_node
+from DSA_python.node import Node
+
+
+from node import Node
 
 # Our LinkedList class
 class LinkedList:
@@ -39,7 +29,7 @@ class LinkedList:
         string_list += str(current_node.get_value()) + "\n"
       current_node = current_node.get_next_node()
     return string_list
-    
+
 #   we’ll create a function that removes the first node that contains a particular value.
   def remove_node(self, value_to_remove):
     current_node = self.get_head_node()

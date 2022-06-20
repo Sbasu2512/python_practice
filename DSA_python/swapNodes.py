@@ -17,6 +17,8 @@ def swap_nodes(input_list, val1, val2):
     print("Elements are the same - no swap needed")
     return
 # we have found our matching node, and also saved its previous node
+# if node1 is not none, we get its value and match it with val1, if it is equal then we have
+# found the node we were looking for.
   while node1 is not None:
     if node1.get_value() == val1:
       break
@@ -45,7 +47,8 @@ def swap_nodes(input_list, val1, val2):
     input_list.head_node = node1
   else:
     node2_prev.set_next_node(node1)
-
+# The last step is to update the pointers from node1 and node2.
+# This is relatively simple, and mirrors a swapping function for an array in that we will use a temporary variable
   temp = node1.get_next_node()
   node1.set_next_node(node2.get_next_node())
   node2.set_next_node(temp)
