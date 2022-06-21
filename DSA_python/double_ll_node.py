@@ -31,7 +31,7 @@ A pointer to the next node
   def get_value(self):
     return self.value'''
 
-class Node:
+class Double_Linked_Node:
     def __init__(self, value, prev_node=None, next_node=None):
         self.value = value
         self.prev_node = prev_node
