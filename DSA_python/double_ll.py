@@ -1,6 +1,21 @@
 from double_ll_node import Double_Linked_Node
 '''
+the nodes have pointers to the previous node as well as the next node. This means that the doubly linked list data structure has a tail property in addition to a head property, which allows for traversal in both directions.
 
+So the nodes we will use for our doubly linked list contain three elements:
+
+A value
+A pointer to the previous node
+A pointer to the next node
+
+For our use, we want to be able to:
+
+Add a new node to the head (beginning) of the list
+Add a new node to the tail (end) of the list
+Remove a node from the head of the list
+Remove a node from the tail of the list
+Find and remove a specific node by its value
+Print out the nodes in the list in order from head to tail
 '''
 class DoublyLinkedList:
   def __init__(self):
