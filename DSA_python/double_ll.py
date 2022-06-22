@@ -60,7 +60,7 @@ Update the head property to be the new tail since that node will be both the hea
 '''
 def add_to_tail(self, new_value):
     # new tail node 
-    new_tail = Node(new_value)
+    new_tail = Double_Linked_Node(new_value)
     # existing tail node
     current_tail = self.tail_node
     # check if there is current tail in our linked list
