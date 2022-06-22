@@ -74,7 +74,16 @@ def add_to_tail(self, new_value):
     # Lastly, if the list doesn’t have a head, set the list’s head to the new tail.
     if self.head_node == None:
       self.head_node = new_tail
-
+'''
+Start by checking if there’s a current head to the list.
+If there isn’t, the list is empty, so there’s nothing to remove and the method ends
+Otherwise, update the list’s head to be the current head’s next node
+If the updated head is not None (meaning the list had more than one element when we started):
+Set the head’s previous node to None since there should be no node before the head of the list
+If the removed head was also the tail of the list (meaning there was only one element in the list):
+Call .remove_tail() to make the necessary changes to the tail of the list (we will create this method in the next exercise!)
+Finally, return the removed head’s value
+'''
 def remove_head(self):
     removed_head = self.head_node
     # Check if removed_head has no value. If so, that means there’s nothing to remove, so return None to end the method.
@@ -91,3 +100,31 @@ def remove_head(self):
   #  If so, call the .remove_tail() method
       self.remove_tail()
     return removed_head.get_value()
+'''
+Start by checking if there’s a current tail to the list.
+If there isn’t, The list is empty, so there’s nothing to remove, and the method ends
+Otherwise, update the list’s tail to be the current tail’s previous node
+If the updated tail is not None (meaning the list had more than one element when we started):
+Set the tail’s next node to None since there should be no node after the tail of the list
+If the removed tail was also the head of the list (meaning there was only one element in the list):
+Call .remove_head() to make the necessary changes to the head of the list
+Finally, return the old tail’s data
+'''
+def remove_tail(self):
+    removed_tail = self.tail_node
+# Check if removed_tail has no value. If so, i.e., the list is empty and there’s nothing to remove, 
+# so return None to end the method.
+    if removed_tail == None:
+      return None
+# otherwise, if removed_tail has value. set the list’s tail to removed_tail‘s previous node.
+    self.tail_node = removed_tail.get_prev_node()
+# If the list still has a tail
+    if self.tail_node != None:
+# set the tail’s next node to None, since the tail of the list shouldn’t have a next node.
+      self.tail_node.set_next_node(None)
+# If the removed tail was also the head of the list (meaning there was only one element in the list):
+    if removed_tail == self.head_node:
+# Call .remove_head() to make the necessary changes to the head of the list
+      self.remove_head()
+# Finally, return the old tail’s data
+    return removed_tail.get_value()
