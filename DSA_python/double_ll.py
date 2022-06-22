@@ -49,3 +49,45 @@ def add_to_head(self, new_value):
 # checking if tail node exists or not, if not then setting new_head as the tail node as well
     if self.tail_node == None:
       self.tail_node = new_head
+'''
+Start by checking to see if there is a current tail to the list
+If there is (meaning the list is not empty), then we want to reset the pointers at the tail of the list:
+Set the current tail’s next node to the new tail
+Set the new tail’s previous node to the current tail
+Update the tail property to be the new tail
+Finally, if there isn’t a current head to the list (meaning the list was empty):
+Update the head property to be the new tail since that node will be both the head and tail
+'''
+def add_to_tail(self, new_value):
+    # new tail node 
+    new_tail = Node(new_value)
+    # existing tail node
+    current_tail = self.tail_node
+    # check if there is current tail in our linked list
+    if current_tail != None:
+      # Set the current tail’s next node to new_tail
+      current_tail.set_next_node(new_tail)
+      # Set new_tail‘s previous node to the current tail
+      new_tail.set_prev_node(current_tail)
+    # otherwise if current_tail == None, set the list’s tail to the new_tail.
+    self.tail_node = new_tail
+    # Lastly, if the list doesn’t have a head, set the list’s head to the new tail.
+    if self.head_node == None:
+      self.head_node = new_tail
+
+def remove_head(self):
+    removed_head = self.head_node
+    # Check if removed_head has no value. If so, that means there’s nothing to remove, so return None to end the method.
+    if removed_head == None:
+      return None
+# otherwise, if removed_head has value i.e. head node exists. set the list’s head to removed_head‘s next node.
+    self.head_node = removed_head.get_next_node()
+# If the list still has a head, 
+    if self.head_node:
+      # set its previous node to None, since the head of the list shouldn’t have a previous node.
+      self.head_node.set_prev_node(None)
+      # Check if removed_head is equal to the list’s tail.
+    if removed_head == self.tail_node:
+  #  If so, call the .remove_tail() method
+      self.remove_tail()
+    return removed_head.get_value()
