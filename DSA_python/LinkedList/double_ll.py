@@ -160,13 +160,14 @@ def remove_by_value(self, value_to_remove):
       next_node = node_to_remove.get_next_node()
 # A prev_node node that is equal to node_to_remove‘s previous node
       prev_node = node_to_remove.get_prev_node()
-# Now that we have our nodes, we can remove the pointers to and from node_to_remove and have next_node and prev_node point to each other. Still in the else block:
+# Now that we have our nodes, we can remove the pointers to and from node_to_remove and have next_node and prev_node point to each other. 
+# Still in the else block:
 # Set next_node‘s previous node to prev_node
 # Set prev_node‘s next node to next_node 
       next_node.set_prev_node(prev_node)
       prev_node.set_next_node(next_node)
     return node_to_remove
-
+  
 # iteration through LL
 def stringify_list(self):
     string_list = ""
