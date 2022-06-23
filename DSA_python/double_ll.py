@@ -128,3 +128,41 @@ def remove_tail(self):
       self.remove_head()
 # Finally, return the old tail’s data
     return removed_tail.get_value()
+    
+def remove_by_value(self, value_to_remove):
+    node_to_remove = None
+# a current_node node and set it equal to the list’s head. 
+# Then create a while loop that runs while current_node isn’t None
+    current_node = self.head_node
+# Inside the while loop, but before you updated current_node to be its next node, 
+# create an if statement that checks if current_node‘s value matches the passed in value_to_remove. 
+# If it does, that means we have found the matching node.
+# Inside the if:
+# Set node_to_remove to current_node
+# break to leave the while loop, since we don’t need to keep looking through the list
+    while current_node != None:
+      if current_node.get_value() == value_to_remove:
+        node_to_remove = current_node
+        break
+      current_node = current_node.get_next_node()
+# Outside your while loop, check if node_to_remove has any value. 
+# If it doesn’t, that means there was no matching node in the list, so return None to end the method.
+    if node_to_remove == None:
+      return None
+# check if node_to_remove is the list’s head. If so, call .remove_head().
+    if node_to_remove == self.head_node:
+      self.remove_head()
+# if node_to_remove is the list’s tail, call .remove_tail()
+    if node_to_remove == self.tail_node:
+      self.remove_tail()
+    else:
+# A next_node node that is equal to node_to_remove‘s next node
+      next_node = node_to_remove.get_next_node()
+# A prev_node node that is equal to node_to_remove‘s previous node
+      prev_node = node_to_remove.get_prev_node()
+# Now that we have our nodes, we can remove the pointers to and from node_to_remove and have next_node and prev_node point to each other. Still in the else block:
+# Set next_node‘s previous node to prev_node
+# Set prev_node‘s next node to next_node 
+      next_node.set_prev_node(prev_node)
+      prev_node.set_next_node(next_node)
+    return node_to_remove
