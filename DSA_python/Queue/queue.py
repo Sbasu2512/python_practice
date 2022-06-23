@@ -45,7 +45,7 @@ class Queue:
     else: 
       return False
 
-  # Add your enqueue method below:
+  # enqueue is a fancy way of saying adding to the queue
   def enqueue(self, value):
 # an if clause to check if the queue has space
     if self.has_space():
@@ -64,3 +64,24 @@ class Queue:
       self.size += 1
     else:
       print("Sorry, no more room!")
+
+  def dequeue(self):
+# Add an if clause to check if the queue is not empty
+    if self.get_size() > 0:
+# If so, set a new variable item_to_remove to the current head
+      item_to_remove = self.head
+      print("Removing " + str(item_to_remove.get_value()) + " from the queue!")
+# Inside the if statement, below your print statement, check if the size is 1.
+      if self.get_size() == 1:
+# If so, give the queue’s head and tail a value of None
+        self.head = None
+        self.tail = None
+      else:
+# Otherwise, set the queue’s head equal to the following node
+        self.head = self.head.get_next_node()
+# reduce the queue’s size by 1
+      self.size -= 1
+# return the value of item_to_remove
+      return item_to_remove.get_value()
+    else:
+      print("This queue is totally empty!")

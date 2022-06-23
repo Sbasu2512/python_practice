@@ -1,7 +1,7 @@
-from DSA_python.node import Node
+from DSA_python.LinkedList.node import Node
 
 
-from node import Node
+# from node import Node
 
 # Our LinkedList class
 class LinkedList:
