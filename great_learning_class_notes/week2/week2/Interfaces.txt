@@ -1,0 +1,7 @@
+Loose Coupling & Tight Coupling -> Dependency
+
+Loose Coupling -> Add Dependency -> yes for creating Objects
+
+Loose Coupling -> Don't want to Add Dependency on Implementation(s) -> Don't depend on Implementations
+
+How do we not depend on Base Class -> Don't Implement any Base Class

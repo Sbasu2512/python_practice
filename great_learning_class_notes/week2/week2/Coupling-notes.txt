@@ -1,0 +1,11 @@
+Tight Coupling
+ - Dependency in too Internal
+When Object Creation is too Complex
+ - Rigid
+
+Loose Coupling
+ - Dependency in too External
+When Object Implementation is Dynamic
+ - Flexibility
+
+
